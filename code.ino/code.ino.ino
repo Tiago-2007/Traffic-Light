@@ -5,22 +5,22 @@
 *								
 ******************************************************************/
 
-//Constantes
-const int BAUD_RATE = 9600;
+  //Constantes
+  const int BAUD_RATE = 9600;
 
-const int PINO_LED_VERMELHO = 13;
-const int PINO_LED_AMARELO = 11;
-const int PINO_LED_VERDE = 9;
+  const int PINO_LED_VERMELHO = 13;
+  const int PINO_LED_AMARELO = 11;
+  const int PINO_LED_VERDE = 9;
 
-const int ESTADO_INICIALIZACAO_SEMAFORO = 0;
-const int ESTADO_TESTE_SEMAFORO = 1;
-const int ESTADO_ACENDER_VERMELHO = 2;
-const int ESTADO_ACENDER_AMARELO = 3;
-const int ESTADO_ACENDER_VERDE = 4;
+  const int ESTADO_INICIALIZACAO_SEMAFORO = 0;
+  const int ESTADO_TESTE_SEMAFORO = 1;
+  const int ESTADO_ACENDER_VERMELHO = 2;
+  const int ESTADO_ACENDER_AMARELO = 3;
+  const int ESTADO_ACENDER_VERDE = 4;
 
-//Variáveis
-byte estadoAtual;
-byte contador;
+  //Variáveis
+  byte estadoAtual;
+  byte contador;
 
 void setup(void)	{
   Serial.begin(BAUD_RATE);
@@ -91,4 +91,4 @@ void loop(void) {
       break;
     }
   }
-}	
+}		
