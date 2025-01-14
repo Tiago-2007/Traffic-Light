@@ -1,7 +1,7 @@
 /******************************************************************
-*Programador..............: (c)Tiago Machado
-*Data.....................: 13/12/2024
-*Observações..............: Semáforo
+*   Programador..............: (c)Tiago Machado
+*   Data.....................: 13/12/2024
+*   Observações..............: Semáforo
 *								
 ******************************************************************/
 
@@ -22,7 +22,7 @@
   byte estadoAtual;
   byte contador;
 
-void setup(void)	{
+  void setup(void)	{
   Serial.begin(BAUD_RATE);
   
   estadoAtual = ESTADO_INICIALIZACAO_SEMAFORO;
@@ -36,9 +36,9 @@ void setup(void)	{
 	contador = 1;
 }
 
-void loop(void) {
-  switch(estadoAtual)	{
-    case ESTADO_INICIALIZACAO_SEMAFORO: {
+  void loop(void) {
+    switch(estadoAtual)	{
+      case ESTADO_INICIALIZACAO_SEMAFORO: {
       	digitalWrite(PINO_LED_VERMELHO, LOW);
       	digitalWrite(PINO_LED_AMARELO, LOW);
       	digitalWrite(PINO_LED_VERDE, LOW);
@@ -66,21 +66,23 @@ void loop(void) {
       else	{
         estadoAtual = ESTADO_ACENDER_VERMELHO;
       }
-  	  break;
+  	break;
 	}
-	case ESTADO_ACENDER_VERMELHO: {
+	  case ESTADO_ACENDER_VERMELHO: {
       digitalWrite(PINO_LED_VERMELHO, LOW);
       delay(5000);
       estadoAtual = ESTADO_ACENDER_AMARELO;
-      break;
+    break;
     }
+    
     case ESTADO_ACENDER_AMARELO: {
       digitalWrite(PINO_LED_VERMELHO, LOW);
       digitalWrite(PINO_LED_AMARELO, HIGH);
       delay(3000);
       estadoAtual = ESTADO_ACENDER_VERDE;
-      break;
+    break;
     }
+    
     case ESTADO_ACENDER_VERDE: {
       digitalWrite(PINO_LED_VERMELHO, LOW);
       digitalWrite(PINO_LED_AMARELO, HIGH);
@@ -88,7 +90,7 @@ void loop(void) {
       delay(10000);
       digitalWrite(PINO_LED_VERDE, LOW);
       estadoAtual = ESTADO_ACENDER_VERMELHO;
-      break;
+    break;
     }
   }
 }		
